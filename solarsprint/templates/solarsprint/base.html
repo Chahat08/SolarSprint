@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Solar Sprint</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="shortcut icon" type="image/x-icon" href="{% static 'images/website/icon_.ico' %}" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{% static 'css/website/style.css' %}">
+</head>
+<body style="font-family: press_start; background-image: url(/static/images/website/space.gif)">
+<div class="wrapper d-flex align-items-stretch">
+<nav id="sidebar">
+<div class="p-4 pt-5">
+<a href="/play" class="img logo rounded-circle mb-5" style="background-image: url(/static/images/website/icon_text.png);"></a>
+<ul class="list-unstyled components mb-5">
+<li class="active">
+<a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Play</a>
+<ul class="collapse list-unstyled" id="homeSubmenu">
+<li>
+<a href="/play/prithvia">Prithvia</a>
+</li>
+<li>
+<a href="/play/technos">Technos</a>
+</li>
+<li>
+<a href="/play/arthro">Arthro</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="/login">Log-in/Sign-up</a>
+</li>
+<li>
+<a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Explore</a>
+<ul class="collapse list-unstyled" id="pageSubmenu">
+<li>
+<a href="/explore/planets">Planets</a>
+</li>
+<li>
+<a href="/explore/planets">Sprinters</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="/about">About & Credits</a>
+</li>
+</ul>
+<div class="footer">
+<p>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+</p>
+</div>
+</div>
+</nav>
+
+<div id="content" class="p-4 p-md-5">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<div class="container-fluid">
+<button type="button" id="sidebarCollapse" class="btn btn-primary">
+<i class="fa fa-bars"></i>
+<span class="sr-only">Toggle Menu</span>
+</button>
+<button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<i class="fa fa-bars"></i>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="nav navbar-nav ml-auto">
+<li class="nav-item active">
+<a class="nav-link" href="/play">Play</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/login">Log-in</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/explore">Explore</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/about">About</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<h2 class="mb-4" style="font-family: press_start; color: #f5e284;">Solar Sprint</h2>
+    {% block content %}
+    {% endblock %}
+</div>
+</div>
+<script type="text/javascript" src="{% static 'js/website/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/website/popper.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/website/bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/website/main.js' %}"></script>
+{% block scripts %}
+{% endblock %}
+</body>
+</html>
