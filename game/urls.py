@@ -15,8 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls import url, include
+from solarsprint import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('solarsprint.urls')),
+    url(r'^$',views.index,name='index'),
+    url(r'^log-in/', views.log_in, name='log_in'),
+    url(r'^special/',views.special,name='special'),
+    url(r'^solarsprint/',include('solarsprint.urls')),
+    url(r'^logout/$', views.user_logout, name='logout'),
 ]

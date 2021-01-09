@@ -29,9 +29,15 @@
 </li>
 </ul>
 </li>
+{% if user.is_authenticated %}
+    <li>
+        <a href="/log-in">Your account</a>
+    </li>
+{% else %}
 <li>
-<a href="/login">Log-in/Sign-up</a>
+    <a href="/log-in">Log-in/Sign-up</a>
 </li>
+{% endif %}
 <li>
 <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Explore</a>
 <ul class="collapse list-unstyled" id="pageSubmenu">
@@ -70,9 +76,15 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <li class="nav-item active">
 <a class="nav-link" href="/play">Play</a>
 </li>
-<li class="nav-item">
-<a class="nav-link" href="/login">Log-in</a>
-</li>
+{% if user.is_authenticated %}
+    <li class="nav-item">
+        <a class="nav-link" href="#">Account</a>
+    </li>
+{% else %}
+    <li class="nav-item">
+        <a class="nav-link" href="/log-in">Log-in</a>
+    </li >
+{% endif %}
 <li class="nav-item">
 <a class="nav-link" href="/explore">Explore</a>
 </li>
