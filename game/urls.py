@@ -21,7 +21,9 @@ from solarsprint import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^$',views.index,name='index'),
+    url(r'home/', views.index, name='home'),
     url(r'^log-in/', views.log_in, name='log_in'),
+    url(r'^account/', views.account_details, name='account_details'),
     url(r'^special/',views.special,name='special'),
     url(r'^solarsprint/',include('solarsprint.urls')),
     url(r'^logout/$', views.user_logout, name='logout'),

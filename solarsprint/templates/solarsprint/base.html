@@ -13,7 +13,7 @@
 <div class="wrapper d-flex align-items-stretch">
 <nav id="sidebar">
 <div class="p-4 pt-5">
-<a href="/play" class="img logo rounded-circle mb-5" style="background-image: url(/static/images/website/icon_text.png);"></a>
+<a href="/home" class="img logo rounded-circle mb-5" style="background-image: url(/static/images/website/icon_text.png);"></a>
 <ul class="list-unstyled components mb-5">
 <li class="active">
 <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Play</a>
@@ -31,11 +31,11 @@
 </li>
 {% if user.is_authenticated %}
     <li>
-        <a href="/log-in">Your account</a>
+        <a href="/account">Your account</a>
     </li>
 {% else %}
 <li>
-    <a href="/log-in">Log-in/Sign-up</a>
+    <a href="/account">Log-in/Sign-up</a>
 </li>
 {% endif %}
 <li>
@@ -78,7 +78,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 </li>
 {% if user.is_authenticated %}
     <li class="nav-item">
-        <a class="nav-link" href="#">Account</a>
+        <a class="nav-link" href="/account">Account</a>
     </li>
 {% else %}
     <li class="nav-item">

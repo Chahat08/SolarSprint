@@ -5,7 +5,11 @@
       <div class="container">
         <ul class="nav navbar-nav">
 {# Django Home Link / Admin Link / Register Link#}
-          <li><a class="navbar-brand" href="{% url 'index' %}">Log-in to save your progress!</a></li>
+            {% if user.is_authenticated %}
+          <li><a class="navbar-brand" href="{% url 'account_details' %}">You have logged in successfully!</a></li>
+            {% else %}
+            <li><a class="navbar-brand" href="{% url 'account_details' %}">Log-in to save your progress!</a></li>
+            {% endif %}
           <li><a class="navbar-link" href="{% url 'admin:index' %}">Admin</a></li>
           <li><a class="navbar-link" href="{% url 'solarsprint:register' %}">Register</a></li>
           {# Some logic on what to display for last item#}
@@ -17,7 +21,7 @@
 </ul>
       </div>
     </nav>
-    <div class="container">
+    <div class="wrapper" style="font-family: press_start">
     {% block body_block %}
     {% endblock %}
     </div>

@@ -1,0 +1,49 @@
+{% extends "solarsprint/login_base.html" %}
+{% load static %}
+{% block body_block %}
+<div class="wrapper">
+  <div class="jumbotron" style="font-family: press_start;">
+    <h1 style="font-family: press_start;">Your stats!</h1>
+      <p>Please note that progress will be saved only if you log into your account.</p>
+    {% if user.is_authenticated %}
+        <h2 style="font-family: press_start;">Hello {{ user.username }}</h2>
+        <ul class="list-unstyled components mb-5">
+            <li>Total Games Played: {{ game_info.total_games_played }}</li>
+            <li>Longest Run: {{ game_info.high_score }}</li>
+         <li class="active">
+             <a href="#planetList" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Unlocked Planets</a>
+             <ul class="collapse list-unstyled" id="planetList">
+
+        {% if game_info.unlocked_pr %}
+                 <li>
+                    Prithvia
+                 </li>
+        {% endif %}
+
+        {% if game_info.unlocked_arac %}
+                 <li>
+                    Arachno
+                 </li>
+        {% endif %}
+
+        {% if game_info.unlocked_arth %}
+                 <li>
+                     Arthros
+                 </li>
+        {% endif %}
+
+        {% if game_info.unlocked_arc %}
+                 <li>
+                    Arcadia
+                 </li>
+        {% endif %}
+             </ul>
+
+        </li>
+        </ul>
+    {% else %}
+        <h2>Register or Login if you want to store your progress!</h2>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
