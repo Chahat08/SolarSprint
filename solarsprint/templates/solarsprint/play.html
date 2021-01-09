@@ -9,11 +9,12 @@
             <p>Please update to a modern browser such as <a href="www.google.com/chrome/">Google Chrome</a>to play.</p>
         </canvas>
         <div id="game-over">
-      <a href="javascript:void(0);" class="restart" id="restart">Try again?</a>
+      <a href="javascript:void(0);" class="restart" id="restart">Try again? {{ planet.high_score }}</a>
     </div>
     </div>
     </div>
+
     {% block scripts %}
-    <script type="text/javascript" src="{% static 'js/game/intro.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/game/solarsprint1.js' %}"></script>
     {% endblock %}
 {% endblock %}

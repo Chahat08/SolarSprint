@@ -36,23 +36,23 @@
   var assetLoader = (function() {
     // images dictionary
     this.imgs        = {
-      'bg'            : '/static/images/game/prithvia/bg.png',
-      'sky'           : '/static/images/game/prithvia/sky.png',
-      'backdrop'      : '/static/images/game/prithvia/backdrop.png',
-      'backdrop2'     : '/static/images/game/prithvia/backdrop_ground.png',
-      'grass'         : '/static/images/game/prithvia/grass.png',
-      'avatar_normal' : '/static/images/game/prithvia/bilbo_walk_.png',
-      'water'         : '/static/images/game/prithvia/water.png',
-      'grass1'        : '/static/images/game/prithvia/grassMid1.png',
-      'grass2'        : '/static/images/game/prithvia/grassMid2.png',
-      'bridge'        : '/static/images/game/prithvia/bridge.png',
-      'plant'         : '/static/images/game/prithvia/plant.png',
-      'bush1'         : '/static/images/game/prithvia/bush1.png',
-      'bush2'         : '/static/images/game/prithvia/bush2.png',
-      'cliff'         : '/static/images/game/prithvia/grassCliffRight.png',
-      'rock2'         : '/static/images/game/prithvia/ock2_.png',
-      'box'           : '/static/images/game/prithvia/boxCoin.png',
-      'rock1'         : '/static/images/game/prithvia/rock1_.png'
+      'bg'            : '/static/images/game/nirus/bg.png',
+      'sky'           : '/static/images/game/nirus/sky.png',
+      'backdrop'      : '/static/images/game/nirus/backdrop.png',
+      'backdrop2'     : '/static/images/game/nirus/backdrop_buildings.png',
+      'grass'         : '/static/images/game/nirus/grass.png',
+      'avatar_normal' : '/static/images/game/nirus/bilbo_walk_.png',
+      'water'         : '/static/images/game/nirus/water.png',
+      'grass1'        : '/static/images/game/nirus/grassMid1.png',
+      'grass2'        : '/static/images/game/nirus/grassMid2.png',
+      'bridge'        : '/static/images/game/nirus/bridge.png',
+      'plant'         : '/static/images/game/nirus/plant.png',
+      'bush1'         : '/static/images/game/nirus/bush1.png',
+      'bush2'         : '/static/images/game/nirus/bush2.png',
+      'cliff'         : '/static/images/game/nirus/grassCliffRight.png',
+      'spikes'        : '/static/images/game/nirus/spikes.png',
+      'box'           : '/static/images/game/nirus/boxCoin.png',
+      'slime'         : '/static/images/game/nirus/slime.png'
     };
 
     var assetsLoaded = 0;                                // how many assets have been loaded
@@ -315,7 +315,7 @@
     player.isJumping = false;
 
     // spritesheets
-    player.sheet     = new SpriteSheet('/static/images/game/bilbo_walk_.png', player.width, player.height);
+    player.sheet     = new SpriteSheet('/static/images/game/nirus/bilbo_walk_.png', player.width, player.height);
     player.walkAnim  = new Animation(player.sheet, 6, 0, 5); //4, 0, 15
     player.jumpAnim  = new Animation(player.sheet, 6, 5, 5); //4, 15, 15
     player.fallAnim  = new Animation(player.sheet, 6, 3, 3); //4, 11, 11
@@ -617,7 +617,7 @@
       enemies.push(new Sprite(
         canvas.width + platformWidth % player.speed,
         platformBase - platformHeight * platformSpacer - platformWidth,
-        Math.random() > 0.5 ? 'rock1' : 'rock2'
+        Math.random() > 0.5 ? 'spines' : 'spikes'
       ));
     }
   }

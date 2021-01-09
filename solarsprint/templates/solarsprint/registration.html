@@ -2,18 +2,19 @@
 {% load static %}
 {% block body_block %}
   <div class="container">
-    <div class="jumbotron">
+    <div class="jumbotron" >
       {% if registered %}
-        <h1>Thank you for registering!</h1>
+        <h1 sytle="font-family: press_start;">Thank you for registering!</h1>
       {% else %}
-        <h1>Register Here</h1>
-        <h3>Just fill out the form.</h3>
-<form enctype="multipart/form-data" method="POST">
+        <h1 style="font-family: press_start;">Register Here</h1>
+        <h3 style="font-family: press_start;">Just fill out the form.</h3>
+        <div class="container" >
+<form enctype="multipart/form-data" method="POST" style="font-family: press_start;">
           {% csrf_token %}
           {{ user_form.as_p }}
-          {# {{ profile_form.as_p }} #}
           <input type="submit" name="" value="Register">
         </form>
+            </div>
 
       {% endif %}
     </div>
