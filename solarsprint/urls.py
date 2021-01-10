@@ -15,6 +15,7 @@ urlpatterns = [
     url(r'^galnerth', views.galnerth, name='galnerth'),
     url(r'^nirus', views.nirus, name='nirus'),
     url(r'^planets', views.explore_planets, name='explore_planets'),
+    url(r'^sprinters', views.explore_sprinters, name='explore_sprinters'),
 ]
 
 

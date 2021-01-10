@@ -92,3 +92,6 @@ def nirus(request):
 def explore_planets(request):
     return render(request, 'solarsprint/explore_planets.html', {})
 
+def explore_sprinters(request):
+    return render(request, 'solarsprint/explore_sprinters.html', {})
+
