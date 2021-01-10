@@ -2,7 +2,7 @@
 {% block body_block %}
   <div class="container">
     <div class="jumbotron">
-      <h1>Login here :</h1>
+      <h1 style="font-family: press_start;">Login here</h1>
 <form method="post" action="{% url 'solarsprint:user_login' %}">
           {% csrf_token %}
           {# A more "HTML" way of creating the login form#}

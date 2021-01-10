@@ -729,7 +729,7 @@
     platformLength = 15;
     gapLength = 0;
 
-    ctx.font = '16px arial, sans-serif';
+    ctx.font = '10px press_start';
 
     for (var i = 0; i < 30; i++) {
       ground.push(new Sprite(i * (platformWidth-3), platformBase - platformHeight * platformSpacer, 'grass'));

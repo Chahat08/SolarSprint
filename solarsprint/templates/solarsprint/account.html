@@ -8,41 +8,33 @@
     {% if user.is_authenticated %}
         <h2 style="font-family: press_start;">Hello {{ user.username }}</h2>
         <ul class="list-unstyled components mb-5">
-            <li>Total Games Played: {{ game_info.total_games_played }}</li>
-            <li>Longest Run: {{ game_info.high_score }}</li>
+            <li>Total Games Played: 39</li>
+            <li>Longest Run: 511 m</li>
          <li class="active">
-             <a href="#planetList" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Unlocked Planets</a>
+             <a href="#planetList" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Planetary Statistics</a>
              <ul class="collapse list-unstyled" id="planetList">
 
-        {% if game_info.unlocked_pr %}
                  <li>
                     Prithvia
+                     <ul><li>Total games played: 24</li><li>High Score : 511 m</li></ul>
                  </li>
-        {% endif %}
 
-        {% if game_info.unlocked_arac %}
                  <li>
-                    Arachno
+                    Galnerth
+                     <ul><li>Total games played: 11</li><li>High Score : 136 m</li></ul>
                  </li>
-        {% endif %}
 
-        {% if game_info.unlocked_arth %}
                  <li>
-                     Arthros
+                     Nirus
+                     <ul><li>Total games played: 4</li><li>High Score : 92 m</li></ul>
                  </li>
-        {% endif %}
 
-        {% if game_info.unlocked_arc %}
-                 <li>
-                    Arcadia
-                 </li>
-        {% endif %}
              </ul>
 
         </li>
         </ul>
     {% else %}
-        <h2>Register or Login if you want to store your progress!</h2>
+        <p>Your stats will show up here when you log in.</p>
     {% endif %}
   </div>
 </div>

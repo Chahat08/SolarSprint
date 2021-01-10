@@ -2,7 +2,6 @@
 
 {% block content %}
     <nav class="navbar navbar-default navbar-static-top">
-      <div class="container">
         <ul class="nav navbar-nav">
 {# Django Home Link / Admin Link / Register Link#}
             {% if user.is_authenticated %}
@@ -19,7 +18,7 @@
             <li><a class="navbar-link" href="{% url 'solarsprint:user_login' %}">Login</a></li>
           {% endif %}
 </ul>
-      </div>
+
     </nav>
     <div class="wrapper" style="font-family: press_start">
     {% block body_block %}

@@ -87,9 +87,9 @@ def account_details(request):
 def prithvia(request):
     return render(request, 'solarsprint/game.html', {'planet':'prithvia'})
 def galnerth(request):
-    return render(request, 'solarsprint/game.html', {'planet':'nirus'})
-def nirus(request):
     return render(request, 'solarsprint/game.html', {'planet':'galnerth'})
+def nirus(request):
+    return render(request, 'solarsprint/game.html', {'planet':'nirus'})
 
 def explore_planets(request):
     return render(request, 'solarsprint/explore_planets.html', {})
