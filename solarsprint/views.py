@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def index(request):
-    return render(request, 'solarsprint/game.html', {})
+    return render(request, 'solarsprint/home.html', {})
 
 #def login(request):
     #return render(request, 'solarsprint/login.html', {})
@@ -81,4 +81,14 @@ def account_details(request):
     else:
         print("in else")
         return render(request, 'solarsprint/login.html', {})
+
+def prithvia(request):
+    return render(request, 'solarsprint/game.html', {'planet':'prithvia'})
+def galnerth(request):
+    return render(request, 'solarsprint/game.html', {'planet':'nirus'})
+def nirus(request):
+    return render(request, 'solarsprint/game.html', {'planet':'galnerth'})
+
+def explore_planets(request):
+    return render(request, 'solarsprint/explore_planets.html', {})
 

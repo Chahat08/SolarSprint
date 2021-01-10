@@ -1,47 +1,25 @@
-var sun = new Image();
-var moon = new Image();
-var earth = new Image();
-function init() {
-  sun.src = '/static/images/planets/sun1.png';
-  moon.src = '/static/images/planets/Halberd.png';
-  earth.src = '/static/images/planets/prithvia.png';
-  window.requestAnimationFrame(draw);
-}
+var ctx = document.querySelector("canvas").getContext("2d"),
+    dashLen = 200, dashOffset = dashLen, speed = 30,
+    txt = "Explore the far-away planetary system of SOLAS!  ", x = 30, i = 0;
 
-function draw() {
-  var ctx = document.getElementById('canvas').getContext('2d');
+ctx.font = "20px press_start";
+ctx.lineWidth = 5; ctx.lineJoin = "round"; ctx.globalAlpha = 2/3;
+ctx.strokeStyle = ctx.fillStyle = "#ffff9e";
 
-  ctx.globalCompositeOperation = 'destination-over';
-  ctx.clearRect(0, 0, 300, 300); // clear canvas
+(function loop() {
+    //ctx.drawImage(assetLoader.imgs.bg, 0, 0);
+  ctx.clearRect(x, 0, 60, 150);
+  ctx.setLineDash([dashLen - dashOffset, dashOffset - speed]); // create a long dash mask
+  dashOffset -= speed;                                         // reduce dash length
+  ctx.strokeText(txt[i], x, 90);                               // stroke letter
 
-  ctx.fillStyle = 'rgba(0, 0, 0, 0.4)';
-  ctx.strokeStyle = 'rgba(0, 153, 255, 0.4)';
-  ctx.save();
-  ctx.translate(150, 150);
-
-  // Earth
-  var time = new Date();
-  ctx.rotate(((2 * Math.PI) / 60) * time.getSeconds() + ((2 * Math.PI) / 60000) * time.getMilliseconds());
-  ctx.translate(105, 0);
-  ctx.fillRect(0, -12, 50, 24); // Shadow
-  ctx.drawImage(earth, -12, -12);
-
-  // Moon
-  ctx.save();
-  ctx.rotate(((2 * Math.PI) / 6) * time.getSeconds() + ((2 * Math.PI) / 6000) * time.getMilliseconds());
-  ctx.translate(0, 28.5);
-  ctx.drawImage(moon, -3.5, -3.5);
-  ctx.restore();
-
-  ctx.restore();
-
-  ctx.beginPath();
-  ctx.arc(150, 150, 105, 0, Math.PI * 2, false); // Earth orbit
-  ctx.stroke();
-
-  ctx.drawImage(sun, 0, 0, 300, 300);
-
-  window.requestAnimationFrame(draw);
-}
-
-init();
+  if (dashOffset > 0) requestAnimationFrame(loop);             // animate
+  else {
+    ctx.fillText(txt[i], x, 90);                               // fill final letter
+    dashOffset = dashLen;                                      // prep next char
+    x += ctx.measureText(txt[i++]).width + ctx.lineWidth * Math.random();
+    ctx.setTransform(1, 0, 0, 1, 0, 3 * Math.random());        // random y-delta
+    ctx.rotate(Math.random() * 0.005);                         // random rotation
+    if (i < txt.length) requestAnimationFrame(loop);
+  }
+})();

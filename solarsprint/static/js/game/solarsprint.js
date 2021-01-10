@@ -50,7 +50,7 @@
       'bush1'         : '/static/images/game/prithvia/bush1.png',
       'bush2'         : '/static/images/game/prithvia/bush2.png',
       'cliff'         : '/static/images/game/prithvia/grassCliffRight.png',
-      'rock2'         : '/static/images/game/prithvia/ock2_.png',
+      'rock2'         : '/static/images/game/prithvia/rock2_.png',
       'box'           : '/static/images/game/prithvia/boxCoin.png',
       'rock1'         : '/static/images/game/prithvia/rock1_.png'
     };
@@ -315,7 +315,7 @@
     player.isJumping = false;
 
     // spritesheets
-    player.sheet     = new SpriteSheet('/static/images/game/bilbo_walk_.png', player.width, player.height);
+    player.sheet     = new SpriteSheet('/static/images/game/prithvia/bilbo_walk_.png', player.width, player.height);
     player.walkAnim  = new Animation(player.sheet, 6, 0, 5); //4, 0, 15
     player.jumpAnim  = new Animation(player.sheet, 6, 5, 5); //4, 15, 15
     player.fallAnim  = new Animation(player.sheet, 6, 3, 3); //4, 11, 11

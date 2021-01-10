@@ -4,16 +4,31 @@
 {% block content %}
     <div  style="font-family: press_start;">
     <div class="wrapper">
-        <canvas id="canvas" width="800" height="480">
+        <canvas id="canvas" width="1100" height="120">
             <p>Your browser doesn't support the required functionality to play.</p>
             <p>Please update to a modern browser such as <a href="www.google.com/chrome/">Google Chrome</a>to play.</p>
         </canvas>
-        <div id="game-over">
-      <a href="javascript:void(0);" class="restart" id="restart">Try again?</a>
-    </div>
+        <a href="/play/prithvia" class="item">
+            <img src="/static/images/planets/prithvia.png" alt="prithvia" title="Prithvia">
+        </a>
+        <img src="/static/images/planets/sun1.png" alt="sun">
+        <a href="/play/galnerth" class="item">
+            <img src="/static/images/planets/galnerth.png" alt="galnerth" title="Galnerth">
+        </a>
+        <a href="/play/nirus" class="item">
+            <img src="/static/images/planets/nirus.png" alt="nirus" title="Nirus">
+        </a>
     </div>
     </div>
     {% block scripts %}
     <script type="text/javascript" src="{% static 'js/game/intro.js' %}"></script>
     {% endblock %}
 {% endblock %}
+<div class="container">
+  <img src="img_snow_wide.jpg" alt="Snow" style="width:100%;">
+  <div class="bottom-left">Bottom Left</div>
+  <div class="top-left">Top Left</div>
+  <div class="top-right">Top Right</div>
+  <div class="bottom-right">Bottom Right</div>
+  <div class="centered">Centered</div>
+</div>

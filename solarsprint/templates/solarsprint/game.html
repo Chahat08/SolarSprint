@@ -14,6 +14,14 @@
     </div>
     </div>
     {% block scripts %}
-    <script type="text/javascript" src="{% static 'js/game/intro.js' %}"></script>
+    {% ifequal planet "prithvia" %}
+    <script type="text/javascript" src="{% static 'js/game/solarsprint.js' %}"></script>
+    {% endifequal %}
+    {% ifequal planet "galnerth" %}
+    <script type="text/javascript" src="{% static 'js/game/solarsprint1.js' %}"></script>
+    {% endifequal %}
+    {% ifequal planet "nirus" %}
+    <script type="text/javascript" src="{% static 'js/game/solarsprint2.js' %}"></script>
+    {% endifequal %}
     {% endblock %}
 {% endblock %}
