@@ -13,6 +13,8 @@ def index(request):
 #def login(request):
     #return render(request, 'solarsprint/login.html', {})
 
+def about(request):
+    return render(request, 'solarsprint/about.html', {})
 
 def log_in(request):
     return render(request,'solarsprint/login.html', {})
